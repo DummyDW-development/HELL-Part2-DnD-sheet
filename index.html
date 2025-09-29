@@ -637,7 +637,7 @@
                     <label for="level" class="tooltip">Level:
                         <span class="tooltiptext">Experience level (starts at 1)</span>
                     </label>
-                    <input type="number" id="level" min="1" value="1">
+                    <input type="text" id="level" class="comma-number" value="1">
                 </div>
             </div>
 
@@ -654,7 +654,7 @@
                     <label for="age" class="tooltip">Age:
                         <span class="tooltiptext">Character's age in years</span>
                     </label>
-                    <input type="number" id="age" min="1" value="20">
+                    <input type="text" id="age" class="comma-number" value="20">
                 </div>
 
                 <div class="label-input-pair">
@@ -730,21 +730,21 @@
                     <label for="honor" class="tooltip">Honor/Reputation:
                         <span class="tooltiptext">Honor score or reputation</span>
                     </label>
-                    <input type="number" id="honor" value="0">
+                    <input type="text" id="honor" class="comma-number" value="0">
                 </div>
 
                 <div class="label-input-pair">
                     <label for="base-honor" class="tooltip">Base Honor:
                         <span class="tooltiptext">Starting honor value</span>
                     </label>
-                    <input type="number" id="base-honor" value="0">
+                    <input type="text" id="base-honor" class="comma-number" value="0">
                 </div>
 
                 <div class="label-input-pair">
                     <label for="reaction-adjustment" class="tooltip">Reaction Adjustment:
                         <span class="tooltiptext">Charisma-based NPC interaction modifier</span>
                     </label>
-                    <input type="number" id="reaction-adjustment" value="0">
+                    <input type="text" id="reaction-adjustment" class="comma-number" value="0">
                 </div>
 
                 <div class="label-input-pair">
@@ -768,7 +768,7 @@
                     <label for="siblings" class="tooltip"># Siblings:
                         <span class="tooltiptext">Total number of siblings</span>
                     </label>
-                    <input type="number" id="siblings" min="0" value="0">
+                    <input type="text" id="siblings" class="comma-number" value="0">
                 </div>
             </div>
         </div>
@@ -779,37 +779,37 @@
                     <label for="str" class="tooltip">STR
                         <span class="tooltiptext">Strength - Measures physical power, affecting melee combat and carrying capacity</span>
                     </label>
-                    <input type="number" id="str" min="3" max="25" value="10">
+                    <input type="text" id="str" class="comma-number" value="10">
                     <div class="ability-details">
                         <div class="ability-detail">
                             <label for="str-hit-prob" class="tooltip">Hit Prob:
                                 <span class="tooltiptext">To-hit probability modifier in melee combat</span>
                             </label>
-                            <input type="number" id="str-hit-prob" value="0">
+                            <input type="text" id="str-hit-prob" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="str-dmg-adj" class="tooltip">Dmg Adj:
                                 <span class="tooltiptext">Damage adjustment for melee attacks</span>
                             </label>
-                            <input type="number" id="str-dmg-adj" value="0">
+                            <input type="text" id="str-dmg-adj" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="str-max-press" class="tooltip">Max Press:
                                 <span class="tooltiptext">Maximum weight the character can press overhead</span>
                             </label>
-                            <input type="number" id="str-max-press" value="0">
+                            <input type="text" id="str-max-press" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="str-op-drs" class="tooltip">Op Drs:
                                 <span class="tooltiptext">Chance to open doors (as percentage)</span>
                             </label>
-                            <input type="number" id="str-op-drs" value="0">
+                            <input type="text" id="str-op-drs" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="str-bb-lg" class="tooltip">BB/LG:
                                 <span class="tooltiptext">Bend bars/lift gates percentage chance</span>
                             </label>
-                            <input type="number" id="str-bb-lg" value="0">
+                            <input type="text" id="str-bb-lg" class="comma-number" value="0">
                         </div>
                     </div>
                 </div>
@@ -818,25 +818,25 @@
                     <label for="dex" class="tooltip">DEX
                         <span class="tooltiptext">Dexterity - Measures agility, reflexes, and balance</span>
                     </label>
-                    <input type="number" id="dex" min="3" max="25" value="10">
+                    <input type="text" id="dex" class="comma-number" value="10">
                     <div class="ability-details">
                         <div class="ability-detail">
                             <label for="dex-rctn-adj" class="tooltip">Rctn Adj:
                                 <span class="tooltiptext">Reaction adjustment for surprise and initiative</span>
                             </label>
-                            <input type="number" id="dex-rctn-adj" value="0">
+                            <input type="text" id="dex-rctn-adj" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="dex-missile-adj" class="tooltip">Missile Adj:
                                 <span class="tooltiptext">Attack adjustment for missile weapons</span>
                             </label>
-                            <input type="number" id="dex-missile-adj" value="0">
+                            <input type="text" id="dex-missile-adj" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="dex-def-adj" class="tooltip">Def Adj:
                                 <span class="tooltiptext">Defensive adjustment to Armor Class</span>
                             </label>
-                            <input type="number" id="dex-def-adj" value="0">
+                            <input type="text" id="dex-def-adj" class="comma-number" value="0">
                         </div>
                     </div>
                 </div>
@@ -845,37 +845,37 @@
                     <label for="con" class="tooltip">CON
                         <span class="tooltiptext">Constitution - Measures health, stamina, and resilience</span>
                     </label>
-                    <input type="number" id="con" min="3" max="25" value="10">
+                    <input type="text" id="con" class="comma-number" value="10">
                     <div class="ability-details">
                         <div class="ability-detail">
                             <label for="con-hp-adj" class="tooltip">HP Adj:
                                 <span class="tooltiptext">Hit point adjustment per level or hit die</span>
                             </label>
-                            <input type="number" id="con-hp-adj" value="0">
+                            <input type="text" id="con-hp-adj" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="con-says-shk" class="tooltip">Says Shk:
                                 <span class="tooltiptext">System shock survival percentage</span>
                             </label>
-                            <input type="number" id="con-says-shk" value="0">
+                            <input type="text" id="con-says-shk" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="con-res-sur" class="tooltip">Res Sur:
                                 <span class="tooltiptext">Resurrection survival percentage</span>
                             </label>
-                            <input type="number" id="con-res-sur" value="0">
+                            <input type="text" id="con-res-sur" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="con-poison-save" class="tooltip">Poison Save:
                                 <span class="tooltiptext">Bonus/penalty to poison saving throws</span>
                             </label>
-                            <input type="number" id="con-poison-save" value="0">
+                            <input type="text" id="con-poison-save" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="con-regen" class="tooltip">Regen:
                                 <span class="tooltiptext">Regeneration rate if applicable (e.g., trolls)</span>
                             </label>
-                            <input type="number" id="con-regen" value="0">
+                            <input type="text" id="con-regen" class="comma-number" value="0">
                         </div>
                     </div>
                 </div>
@@ -884,31 +884,31 @@
                     <label for="int" class="tooltip">INT
                         <span class="tooltiptext">Intelligence - Measures reasoning, memory, and learning ability</span>
                     </label>
-                    <input type="number" id="int" min="3" max="25" value="10">
+                    <input type="text" id="int" class="comma-number" value="10">
                     <div class="ability-details">
                         <div class="ability-detail">
                             <label for="int-lang" class="tooltip">No of Lang:
                                 <span class="tooltiptext">Number of additional languages known</span>
                             </label>
-                            <input type="number" id="int-lang" value="0">
+                            <input type="text" id="int-lang" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="int-spell-lvl" class="tooltip">Spell Lvl:
                                 <span class="tooltiptext">Highest spell level that can be cast</span>
                             </label>
-                            <input type="number" id="int-spell-lvl" value="0">
+                            <input type="text" id="int-spell-lvl" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="int-lrn-sp" class="tooltip">Lrn Sp:
                                 <span class="tooltiptext">Chance to learn a new spell (percentage)</span>
                             </label>
-                            <input type="number" id="int-lrn-sp" value="0">
+                            <input type="text" id="int-lrn-sp" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="int-spells-level" class="tooltip">Spells/Level:
                                 <span class="tooltiptext">Maximum spells per level for wizards</span>
                             </label>
-                            <input type="number" id="int-spells-level" value="0">
+                            <input type="text" id="int-spells-level" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="int-spell-immune" class="tooltip">Spell Immune:
@@ -923,25 +923,25 @@
                     <label for="wis" class="tooltip">WIS
                         <span class="tooltiptext">Wisdom - Measures willpower, common sense, and intuition</span>
                     </label>
-                    <input type="number" id="wis" min="3" max="25" value="10">
+                    <input type="text" id="wis" class="comma-number" value="10">
                     <div class="ability-details">
                         <div class="ability-detail">
                             <label for="wis-mag-def" class="tooltip">Mag Def Adj:
                                 <span class="tooltiptext">Magic defense adjustment to saving throws</span>
                             </label>
-                            <input type="number" id="wis-mag-def" value="0">
+                            <input type="text" id="wis-mag-def" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="wis-bonus-spells" class="tooltip">Bonus Spells:
                                 <span class="tooltiptext">Bonus spells for clerical characters</span>
                             </label>
-                            <input type="number" id="wis-bonus-spells" value="0">
+                            <input type="text" id="wis-bonus-spells" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="wis-spell-fail" class="tooltip">Spell Fail:
                                 <span class="tooltiptext">Chance of spell failure (percentage)</span>
                             </label>
-                            <input type="number" id="wis-spell-fail" value="0">
+                            <input type="text" id="wis-spell-fail" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="wis-spell-immune" class="tooltip">Spell Immune:
@@ -956,25 +956,25 @@
                     <label for="chr" class="tooltip">CHR
                         <span class="tooltiptext">Charisma - Measures force of personality and leadership</span>
                     </label>
-                    <input type="number" id="chr" min="3" max="25" value="10">
+                    <input type="text" id="chr" class="comma-number" value="10">
                     <div class="ability-details">
                         <div class="ability-detail">
                             <label for="chr-max-hench" class="tooltip">Max No Hench:
                                 <span class="tooltiptext">Maximum number of henchmen</span>
                             </label>
-                            <input type="number" id="chr-max-hench" value="0">
+                            <input type="text" id="chr-max-hench" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="chr-loy-base" class="tooltip">Loy Base:
                                 <span class="tooltiptext">Loyalty base score for henchmen</span>
                             </label>
-                            <input type="number" id="chr-loy-base" value="0">
+                            <input type="text" id="chr-loy-base" class="comma-number" value="0">
                         </div>
                         <div class="ability-detail">
                             <label for="chr-rctn-adj" class="tooltip">Rctn Adj:
                                 <span class="tooltiptext">Reaction adjustment from NPCs</span>
                             </label>
-                            <input type="number" id="chr-rctn-adj" value="0">
+                            <input type="text" id="chr-rctn-adj" class="comma-number" value="0">
                         </div>
                     </div>
                 </div>
@@ -988,7 +988,7 @@
                     <label for="ac" class="tooltip">AC
                         <span class="tooltiptext">Armor Class - Lower is better. Base is 10 without armor</span>
                     </label>
-                    <input type="number" id="ac" value="10">
+                    <input type="text" id="ac" class="comma-number" value="10">
                 </div>
                 <div>
                     <div class="ac-adjustments">
@@ -996,19 +996,19 @@
                             <label for="surprised-ac" class="tooltip">Surprised
                                 <span class="tooltiptext">AC when surprised (typically worse)</span>
                             </label>
-                            <input type="number" id="surprised-ac" value="10">
+                            <input type="text" id="surprised-ac" class="comma-number" value="10">
                         </div>
                         <div class="ac-adjustment">
                             <label for="shieldless-ac" class="tooltip">Shieldless
                                 <span class="tooltiptext">AC without shield (if normally using one)</span>
                             </label>
-                            <input type="number" id="shieldless-ac" value="10">
+                            <input type="text" id="shieldless-ac" class="comma-number" value="10">
                         </div>
                         <div class="ac-adjustment">
                             <label for="rear-ac" class="tooltip">Rear
                                 <span class="tooltiptext">AC when attacked from behind</span>
                             </label>
-                            <input type="number" id="rear-ac" value="10">
+                            <input type="text" id="rear-ac" class="comma-number" value="10">
                         </div>
                     </div>
                     <div class="defenses">
@@ -1033,7 +1033,7 @@
                     <label for="hit-points" class="tooltip">Hit Points
                         <span class="tooltiptext">Current hit points - when reduced to 0, character is unconscious</span>
                     </label>
-                    <input type="number" id="hit-points" min="0" value="0">
+                    <input type="text" id="hit-points" class="comma-number" value="0">
 
                     <label for="wounds" class="tooltip">Wounds
                         <span class="tooltiptext">Description of specific wounds or conditions</span>
@@ -1046,7 +1046,7 @@
                         <label for="base-rate" class="tooltip">Base Rate
                             <span class="tooltiptext">Base movement rate in feet per round</span>
                         </label>
-                        <input type="number" id="base-rate" value="12">
+                        <input type="text" id="base-rate" class="comma-number" value="12">
                     </div>
 
                     <div class="movement-grid">
@@ -1054,49 +1054,49 @@
                             <label for="light-move" class="tooltip">Light ( )
                                 <span class="tooltiptext">Movement rate when lightly encumbered</span>
                             </label>
-                            <input type="number" id="light-move" value="12">
+                            <input type="text" id="light-move" class="comma-number" value="12">
                         </div>
                         <div class="movement-item">
                             <label for="mod-move" class="tooltip">Mod ( )
                                 <span class="tooltiptext">Movement rate when moderately encumbered</span>
                             </label>
-                            <input type="number" id="mod-move" value="9">
+                            <input type="text" id="mod-move" class="comma-number" value="9">
                         </div>
                         <div class="movement-item">
                             <label for="hvy-move" class="tooltip">Hvy ( )
                                 <span class="tooltiptext">Movement rate when heavily encumbered</span>
                             </label>
-                            <input type="number" id="hvy-move" value="6">
+                            <input type="text" id="hvy-move" class="comma-number" value="6">
                         </div>
                         <div class="movement-item">
                             <label for="svr-move" class="tooltip">Svr ( )
                                 <span class="tooltiptext">Movement rate when severely encumbered</span>
                             </label>
-                            <input type="number" id="svr-move" value="3">
+                            <input type="text" id="svr-move" class="comma-number" value="3">
                         </div>
                         <div class="movement-item">
                             <label for="jog-move" class="tooltip">Jog (x2)
                                 <span class="tooltiptext">Jogging movement rate (x2 base)</span>
                             </label>
-                            <input type="number" id="jog-move" value="24">
+                            <input type="text" id="jog-move" class="comma-number" value="24">
                         </div>
                         <div class="movement-item">
                             <label for="run3-move" class="tooltip">Run (x3)
                                 <span class="tooltiptext">Running movement rate (x3 base)</span>
                             </label>
-                            <input type="number" id="run3-move" value="36">
+                            <input type="text" id="run3-move" class="comma-number" value="36">
                         </div>
                         <div class="movement-item">
                             <label for="run4-move" class="tooltip">Run (x4)
                                 <span class="tooltiptext">Running movement rate (x4 base)</span>
                             </label>
-                            <input type="number" id="run4-move" value="48">
+                            <input type="text" id="run4-move" class="comma-number" value="48">
                         </div>
                         <div class="movement-item">
                             <label for="run5-move" class="tooltip">Run (x5)
                                 <span class="tooltiptext">Running movement rate (x5 base) - maximum for most characters</span>
                             </label>
-                            <input type="number" id="run5-move" value="60">
+                            <input type="text" id="run5-move" class="comma-number" value="60">
                         </div>
                     </div>
                 </div>
@@ -1111,8 +1111,8 @@
                         <span class="tooltiptext">Save vs. paralysis, poison, or death magic</span>
                     </label>
                     <div class="saving-throw-inputs">
-                        <input type="number" id="save-paralyze-mod" placeholder="Mod" value="0">
-                        <input type="number" id="save-paralyze" placeholder="Save" value="0">
+                        <input type="text" id="save-paralyze-mod" class="comma-number" placeholder="Mod" value="0">
+                        <input type="text" id="save-paralyze" class="comma-number" placeholder="Save" value="0">
                     </div>
                 </div>
                 <div class="saving-throw">
@@ -1120,8 +1120,8 @@
                         <span class="tooltiptext">Save vs. magical rods, staves, and wands</span>
                     </label>
                     <div class="saving-throw-inputs">
-                        <input type="number" id="save-rod-mod" placeholder="Mod" value="0">
-                        <input type="number" id="save-rod" placeholder="Save" value="0">
+                        <input type="text" id="save-rod-mod" class="comma-number" placeholder="Mod" value="0">
+                        <input type="text" id="save-rod" class="comma-number" placeholder="Save" value="0">
                     </div>
                 </div>
                 <div class="saving-throw">
@@ -1129,8 +1129,8 @@
                         <span class="tooltiptext">Save vs. petrification or polymorph effects</span>
                     </label>
                     <div class="saving-throw-inputs">
-                        <input type="number" id="save-petrify-mod" placeholder="Mod" value="0">
-                        <input type="number" id="save-petrify" placeholder="Save" value="0">
+                        <input type="text" id="save-petrify-mod" class="comma-number" placeholder="Mod" value="0">
+                        <input type="text" id="save-petrify" class="comma-number" placeholder="Save" value="0">
                     </div>
                 </div>
                 <div class="saving-throw">
@@ -1138,8 +1138,8 @@
                         <span class="tooltiptext">Save vs. breath weapons (dragons, etc.)</span>
                     </label>
                     <div class="saving-throw-inputs">
-                        <input type="number" id="save-breath-mod" placeholder="Mod" value="0">
-                        <input type="number" id="save-breath" placeholder="Save" value="0">
+                        <input type="text" id="save-breath-mod" class="comma-number" placeholder="Mod" value="0">
+                        <input type="text" id="save-breath" class="comma-number" placeholder="Save" value="0">
                     </div>
                 </div>
                 <div class="saving-throw">
@@ -1147,8 +1147,8 @@
                         <span class="tooltiptext">Save vs. spells (including spell-like effects)</span>
                     </label>
                     <div class="saving-throw-inputs">
-                        <input type="number" id="save-spell-mod" placeholder="Mod" value="0">
-                        <input type="number" id="save-spell" placeholder="Save" value="0">
+                        <input type="text" id="save-spell-mod" class="comma-number" placeholder="Mod" value="0">
+                        <input type="text" id="save-spell" class="comma-number" placeholder="Save" value="0">
                     </div>
                 </div>
             </div>
@@ -1407,262 +1407,301 @@
     </div>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Save character function
-    document.getElementById('save-btn').addEventListener('click', function() {
-        const characterData = {
-            // Character Information
-            align: document.getElementById('align').value,
-            race: document.getElementById('race').value,
-            class: document.getElementById('class').value,
-            level: document.getElementById('level').value,
-            playersName: document.getElementById('players-name').value,
-            family: document.getElementById('family').value,
-            homland: document.getElementById('homland').value,
-            leigePatron: document.getElementById('leige-patron').value,
-            religion: document.getElementById('religion').value,
-            sex: document.getElementById('sex').value,
-            age: document.getElementById('age').value,
-            socialClass: document.getElementById('social-class').value,
-            status: document.getElementById('status').value,
-            ht: document.getElementById('ht').value,
-            wt: document.getElementById('wt').value,
-            birthRank: document.getElementById('birth-rank').value,
-            siblings: document.getElementById('siblings').value,
-            hair: document.getElementById('hair').value,
-            eyes: document.getElementById('eyes').value,
-            appearance: document.getElementById('appearance').value,
-            honor: document.getElementById('honor').value,
-            baseHonor: document.getElementById('base-honor').value,
-            reactionAdjustment: document.getElementById('reaction-adjustment').value,
-
-            // Abilities
-            str: document.getElementById('str').value,
-            strHitProb: document.getElementById('str-hit-prob').value,
-            strDmgAdj: document.getElementById('str-dmg-adj').value,
-            strMaxPress: document.getElementById('str-max-press').value,
-            strOpDrs: document.getElementById('str-op-drs').value,
-            strBbLg: document.getElementById('str-bb-lg').value,
-
-            dex: document.getElementById('dex').value,
-            dexRctnAdj: document.getElementById('dex-rctn-adj').value,
-            dexMissileAdj: document.getElementById('dex-missile-adj').value,
-            dexDefAdj: document.getElementById('dex-def-adj').value,
-
-            con: document.getElementById('con').value,
-            conHpAdj: document.getElementById('con-hp-adj').value,
-            conSaysShk: document.getElementById('con-says-shk').value,
-            conResSur: document.getElementById('con-res-sur').value,
-            conPoisonSave: document.getElementById('con-poison-save').value,
-            conRegen: document.getElementById('con-regen').value,
-
-            int: document.getElementById('int').value,
-            intLang: document.getElementById('int-lang').value,
-            intSpellLvl: document.getElementById('int-spell-lvl').value,
-            intLrnSp: document.getElementById('int-lrn-sp').value,
-            intSpellsLevel: document.getElementById('int-spells-level').value,
-            intSpellImmune: document.getElementById('int-spell-immune').value,
-
-            wis: document.getElementById('wis').value,
-            wisMagDef: document.getElementById('wis-mag-def').value,
-            wisBonusSpells: document.getElementById('wis-bonus-spells').value,
-            wisSpellFail: document.getElementById('wis-spell-fail').value,
-            wisSpellImmune: document.getElementById('wis-spell-immune').value,
-
-            chr: document.getElementById('chr').value,
-            chrMaxHench: document.getElementById('chr-max-hench').value,
-            chrLoyBase: document.getElementById('chr-loy-base').value,
-            chrRctnAdj: document.getElementById('chr-rctn-adj').value,
-
-            // Armor
-            ac: document.getElementById('ac').value,
-            surprisedAc: document.getElementById('surprised-ac').value,
-            shieldlessAc: document.getElementById('shieldless-ac').value,
-            rearAc: document.getElementById('rear-ac').value,
-            armorType: document.getElementById('armor-type').value,
-            defenses: document.getElementById('defenses').value,
-
-            // Hit Points and Movement
-            hitPoints: document.getElementById('hit-points').value,
-            wounds: document.getElementById('wounds').value,
-            baseRate: document.getElementById('base-rate').value,
-            lightMove: document.getElementById('light-move').value,
-            modMove: document.getElementById('mod-move').value,
-            hvyMove: document.getElementById('hvy-move').value,
-            svrMove: document.getElementById('svr-move').value,
-            jogMove: document.getElementById('jog-move').value,
-            run3Move: document.getElementById('run3-move').value,
-            run4Move: document.getElementById('run4-move').value,
-            run5Move: document.getElementById('run5-move').value,
-
-            // Saving Throws
-            saveParalyzeMod: document.getElementById('save-paralyze-mod').value,
-            saveParalyze: document.getElementById('save-paralyze').value,
-            saveRodMod: document.getElementById('save-rod-mod').value,
-            saveRod: document.getElementById('save-rod').value,
-            savePetrifyMod: document.getElementById('save-petrify-mod').value,
-            savePetrify: document.getElementById('save-petrify').value,
-            saveBreathMod: document.getElementById('save-breath-mod').value,
-            saveBreath: document.getElementById('save-breath').value,
-            saveSpellMod: document.getElementById('save-spell-mod').value,
-            saveSpell: document.getElementById('save-spell').value,
-
-            // Weapons
-            specialAttacks: document.getElementById('special-attacks').value
-        };
-
-        // Save to localStorage
-        localStorage.setItem('adndCharacterCustom', JSON.stringify(characterData));
-        alert('Character saved successfully!');
-    });
-
-    // Load character function
-    document.getElementById('load-btn').addEventListener('click', function() {
-        const savedCharacter = localStorage.getItem('adndCharacterCustom');
-        if (savedCharacter) {
-            const characterData = JSON.parse(savedCharacter);
-
-            // Character Information
-            document.getElementById('align').value = characterData.align || '';
-            document.getElementById('race').value = characterData.race || '';
-            document.getElementById('class').value = characterData.class || '';
-            document.getElementById('level').value = characterData.level || '1';
-            document.getElementById('players-name').value = characterData.playersName || '';
-            document.getElementById('family').value = characterData.family || '';
-            document.getElementById('homland').value = characterData.homland || '';
-            document.getElementById('leige-patron').value = characterData.leigePatron || '';
-            document.getElementById('religion').value = characterData.religion || '';
-            document.getElementById('sex').value = characterData.sex || '';
-            document.getElementById('age').value = characterData.age || '20';
-            document.getElementById('social-class').value = characterData.socialClass || '';
-            document.getElementById('status').value = characterData.status || '';
-            document.getElementById('ht').value = characterData.ht || '';
-            document.getElementById('wt').value = characterData.wt || '';
-            document.getElementById('birth-rank').value = characterData.birthRank || '';
-            document.getElementById('siblings').value = characterData.siblings || '0';
-            document.getElementById('hair').value = characterData.hair || '';
-            document.getElementById('eyes').value = characterData.eyes || '';
-            document.getElementById('appearance').value = characterData.appearance || '';
-            document.getElementById('honor').value = characterData.honor || '0';
-            document.getElementById('base-honor').value = characterData.baseHonor || '0';
-            document.getElementById('reaction-adjustment').value = characterData.reactionAdjustment || '0';
-
-            // Abilities
-            document.getElementById('str').value = characterData.str || '10';
-            document.getElementById('str-hit-prob').value = characterData.strHitProb || '0';
-            document.getElementById('str-dmg-adj').value = characterData.strDmgAdj || '0';
-            document.getElementById('str-max-press').value = characterData.strMaxPress || '0';
-            document.getElementById('str-op-drs').value = characterData.strOpDrs || '0';
-            document.getElementById('str-bb-lg').value = characterData.strBbLg || '0';
-
-            document.getElementById('dex').value = characterData.dex || '10';
-            document.getElementById('dex-rctn-adj').value = characterData.dexRctnAdj || '0';
-            document.getElementById('dex-missile-adj').value = characterData.dexMissileAdj || '0';
-            document.getElementById('dex-def-adj').value = characterData.dexDefAdj || '0';
-
-            document.getElementById('con').value = characterData.con || '10';
-            document.getElementById('con-hp-adj').value = characterData.conHpAdj || '0';
-            document.getElementById('con-says-shk').value = characterData.conSaysShk || '0';
-            document.getElementById('con-res-sur').value = characterData.conResSur || '0';
-            document.getElementById('con-poison-save').value = characterData.conPoisonSave || '0';
-            document.getElementById('con-regen').value = characterData.conRegen || '0';
-
-            document.getElementById('int').value = characterData.int || '10';
-            document.getElementById('int-lang').value = characterData.intLang || '0';
-            document.getElementById('int-spell-lvl').value = characterData.intSpellLvl || '0';
-            document.getElementById('int-lrn-sp').value = characterData.intLrnSp || '0';
-            document.getElementById('int-spells-level').value = characterData.intSpellsLevel || '0';
-            document.getElementById('int-spell-immune').value = characterData.intSpellImmune || '';
-
-            document.getElementById('wis').value = characterData.wis || '10';
-            document.getElementById('wis-mag-def').value = characterData.wisMagDef || '0';
-            document.getElementById('wis-bonus-spells').value = characterData.wisBonusSpells || '0';
-            document.getElementById('wis-spell-fail').value = characterData.wisSpellFail || '0';
-            document.getElementById('wis-spell-immune').value = characterData.wisSpellImmune || '';
-
-            document.getElementById('chr').value = characterData.chr || '10';
-            document.getElementById('chr-max-hench').value = characterData.chrMaxHench || '0';
-            document.getElementById('chr-loy-base').value = characterData.chrLoyBase || '0';
-            document.getElementById('chr-rctn-adj').value = characterData.chrRctnAdj || '0';
-
-            // Armor
-            document.getElementById('ac').value = characterData.ac || '10';
-            document.getElementById('surprised-ac').value = characterData.surprisedAc || '10';
-            document.getElementById('shieldless-ac').value = characterData.shieldlessAc || '10';
-            document.getElementById('rear-ac').value = characterData.rearAc || '10';
-            document.getElementById('armor-type').value = characterData.armorType || '';
-            document.getElementById('defenses').value = characterData.defenses || '';
-
-            // Hit Points and Movement
-            document.getElementById('hit-points').value = characterData.hitPoints || '0';
-            document.getElementById('wounds').value = characterData.wounds || '';
-            document.getElementById('base-rate').value = characterData.baseRate || '12';
-            document.getElementById('light-move').value = characterData.lightMove || '12';
-            document.getElementById('mod-move').value = characterData.modMove || '9';
-            document.getElementById('hvy-move').value = characterData.hvyMove || '6';
-            document.getElementById('svr-move').value = characterData.svrMove || '3';
-            document.getElementById('jog-move').value = characterData.jogMove || '24';
-            document.getElementById('run3-move').value = characterData.run3Move || '36';
-            document.getElementById('run4-move').value = characterData.run4Move || '48';
-            document.getElementById('run5-move').value = characterData.run5Move || '60';
-
-            // Saving Throws
-            document.getElementById('save-paralyze-mod').value = characterData.saveParalyzeMod || '0';
-            document.getElementById('save-paralyze').value = characterData.saveParalyze || '0';
-            document.getElementById('save-rod-mod').value = characterData.saveRodMod || '0';
-            document.getElementById('save-rod').value = characterData.saveRod || '0';
-            document.getElementById('save-petrify-mod').value = characterData.savePetrifyMod || '0';
-            document.getElementById('save-petrify').value = characterData.savePetrify || '0';
-            document.getElementById('save-breath-mod').value = characterData.saveBreathMod || '0';
-            document.getElementById('save-breath').value = characterData.saveBreath || '0';
-            document.getElementById('save-spell-mod').value = characterData.saveSpellMod || '0';
-            document.getElementById('save-spell').value = characterData.saveSpell || '0';
-
-            // Weapons and Special Attacks
-            document.getElementById('special-attacks').value = characterData.specialAttacks || '';
-
-            alert('Character loaded successfully!');
-        } else {
-            alert('No saved character found!');
+        // Function to format numbers with commas
+        function formatNumberWithCommas(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
-    });
 
-    // Print function
-    document.getElementById('print-btn').addEventListener('click', function() {
-        window.print();
-    });
+        // Function to remove commas and convert to number
+        function removeCommasAndParse(numberString) {
+            return parseInt(numberString.replace(/,/g, '')) || 0;
+        }
 
-    // Clear sheet function
-    document.getElementById('clear-btn').addEventListener('click', function() {
-        if (confirm('Are you sure you want to clear the entire character sheet?')) {
-            // Clear all inputs
-            const inputs = document.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                if (input.type === 'number') {
-                    input.value = input.id === 'level' ? '1' :
-                        input.id === 'age' ? '20' :
-                        input.id === 'str' || input.id === 'dex' ||
-                        input.id === 'con' || input.id === 'int' ||
-                        input.id === 'wis' || input.id === 'chr' ? '10' :
-                        input.id === 'ac' || input.id === 'surprised-ac' ||
-                        input.id === 'shieldless-ac' || input.id === 'rear-ac' ? '10' :
-                        input.id === 'base-rate' || input.id === 'light-move' ? '12' :
-                        input.id === 'mod-move' ? '9' :
-                        input.id === 'hvy-move' ? '6' :
-                        input.id === 'svr-move' ? '3' :
-                        input.id === 'jog-move' ? '24' :
-                        input.id === 'run3-move' ? '36' :
-                        input.id === 'run4-move' ? '48' :
-                        input.id === 'run5-move' ? '60' : '0';
-                } else if (input.type === 'text' || input.tagName === 'TEXTAREA') {
-                    input.value = '';
-                } else if (input.type === 'checkbox') {
-                    input.checked = false;
-                }
+        // Function to handle input formatting
+        function handleNumberFormatting() {
+            const numberInputs = document.querySelectorAll('.comma-number');
+            
+            numberInputs.forEach(input => {
+                // Format on blur (when user leaves the field)
+                input.addEventListener('blur', function() {
+                    const value = removeCommasAndParse(this.value);
+                    this.value = formatNumberWithCommas(value);
+                });
+                
+                // Remove commas on focus for easier editing
+                input.addEventListener('focus', function() {
+                    this.value = removeCommasAndParse(this.value);
+                });
+                
+                // Initial formatting for existing values
+                const initialValue = removeCommasAndParse(input.value);
+                input.value = formatNumberWithCommas(initialValue);
             });
         }
-    });
-});    </script>
+
+        // Initialize number formatting
+        document.addEventListener('DOMContentLoaded', function() {
+            handleNumberFormatting();
+            
+            // Save character function
+            document.getElementById('save-btn').addEventListener('click', function() {
+                const characterData = {
+                    // Character Information
+                    align: document.getElementById('align').value,
+                    race: document.getElementById('race').value,
+                    class: document.getElementById('class').value,
+                    level: removeCommasAndParse(document.getElementById('level').value),
+                    playersName: document.getElementById('players-name').value,
+                    family: document.getElementById('family').value,
+                    homland: document.getElementById('homland').value,
+                    leigePatron: document.getElementById('leige-patron').value,
+                    religion: document.getElementById('religion').value,
+                    sex: document.getElementById('sex').value,
+                    age: removeCommasAndParse(document.getElementById('age').value),
+                    socialClass: document.getElementById('social-class').value,
+                    status: document.getElementById('status').value,
+                    ht: document.getElementById('ht').value,
+                    wt: document.getElementById('wt').value,
+                    birthRank: document.getElementById('birth-rank').value,
+                    siblings: removeCommasAndParse(document.getElementById('siblings').value),
+                    hair: document.getElementById('hair').value,
+                    eyes: document.getElementById('eyes').value,
+                    appearance: document.getElementById('appearance').value,
+                    honor: removeCommasAndParse(document.getElementById('honor').value),
+                    baseHonor: removeCommasAndParse(document.getElementById('base-honor').value),
+                    reactionAdjustment: removeCommasAndParse(document.getElementById('reaction-adjustment').value),
+
+                    // Abilities
+                    str: removeCommasAndParse(document.getElementById('str').value),
+                    strHitProb: removeCommasAndParse(document.getElementById('str-hit-prob').value),
+                    strDmgAdj: removeCommasAndParse(document.getElementById('str-dmg-adj').value),
+                    strMaxPress: removeCommasAndParse(document.getElementById('str-max-press').value),
+                    strOpDrs: removeCommasAndParse(document.getElementById('str-op-drs').value),
+                    strBbLg: removeCommasAndParse(document.getElementById('str-bb-lg').value),
+
+                    dex: removeCommasAndParse(document.getElementById('dex').value),
+                    dexRctnAdj: removeCommasAndParse(document.getElementById('dex-rctn-adj').value),
+                    dexMissileAdj: removeCommasAndParse(document.getElementById('dex-missile-adj').value),
+                    dexDefAdj: removeCommasAndParse(document.getElementById('dex-def-adj').value),
+
+                    con: removeCommasAndParse(document.getElementById('con').value),
+                    conHpAdj: removeCommasAndParse(document.getElementById('con-hp-adj').value),
+                    conSaysShk: removeCommasAndParse(document.getElementById('con-says-shk').value),
+                    conResSur: removeCommasAndParse(document.getElementById('con-res-sur').value),
+                    conPoisonSave: removeCommasAndParse(document.getElementById('con-poison-save').value),
+                    conRegen: removeCommasAndParse(document.getElementById('con-regen').value),
+
+                    int: removeCommasAndParse(document.getElementById('int').value),
+                    intLang: removeCommasAndParse(document.getElementById('int-lang').value),
+                    intSpellLvl: removeCommasAndParse(document.getElementById('int-spell-lvl').value),
+                    intLrnSp: removeCommasAndParse(document.getElementById('int-lrn-sp').value),
+                    intSpellsLevel: removeCommasAndParse(document.getElementById('int-spells-level').value),
+                    intSpellImmune: document.getElementById('int-spell-immune').value,
+
+                    wis: removeCommasAndParse(document.getElementById('wis').value),
+                    wisMagDef: removeCommasAndParse(document.getElementById('wis-mag-def').value),
+                    wisBonusSpells: removeCommasAndParse(document.getElementById('wis-bonus-spells').value),
+                    wisSpellFail: removeCommasAndParse(document.getElementById('wis-spell-fail').value),
+                    wisSpellImmune: document.getElementById('wis-spell-immune').value,
+
+                    chr: removeCommasAndParse(document.getElementById('chr').value),
+                    chrMaxHench: removeCommasAndParse(document.getElementById('chr-max-hench').value),
+                    chrLoyBase: removeCommasAndParse(document.getElementById('chr-loy-base').value),
+                    chrRctnAdj: removeCommasAndParse(document.getElementById('chr-rctn-adj').value),
+
+                    // Armor
+                    ac: removeCommasAndParse(document.getElementById('ac').value),
+                    surprisedAc: removeCommasAndParse(document.getElementById('surprised-ac').value),
+                    shieldlessAc: removeCommasAndParse(document.getElementById('shieldless-ac').value),
+                    rearAc: removeCommasAndParse(document.getElementById('rear-ac').value),
+                    armorType: document.getElementById('armor-type').value,
+                    defenses: document.getElementById('defenses').value,
+
+                    // Hit Points and Movement
+                    hitPoints: removeCommasAndParse(document.getElementById('hit-points').value),
+                    wounds: document.getElementById('wounds').value,
+                    baseRate: removeCommasAndParse(document.getElementById('base-rate').value),
+                    lightMove: removeCommasAndParse(document.getElementById('light-move').value),
+                    modMove: removeCommasAndParse(document.getElementById('mod-move').value),
+                    hvyMove: removeCommasAndParse(document.getElementById('hvy-move').value),
+                    svrMove: removeCommasAndParse(document.getElementById('svr-move').value),
+                    jogMove: removeCommasAndParse(document.getElementById('jog-move').value),
+                    run3Move: removeCommasAndParse(document.getElementById('run3-move').value),
+                    run4Move: removeCommasAndParse(document.getElementById('run4-move').value),
+                    run5Move: removeCommasAndParse(document.getElementById('run5-move').value),
+
+                    // Saving Throws
+                    saveParalyzeMod: removeCommasAndParse(document.getElementById('save-paralyze-mod').value),
+                    saveParalyze: removeCommasAndParse(document.getElementById('save-paralyze').value),
+                    saveRodMod: removeCommasAndParse(document.getElementById('save-rod-mod').value),
+                    saveRod: removeCommasAndParse(document.getElementById('save-rod').value),
+                    savePetrifyMod: removeCommasAndParse(document.getElementById('save-petrify-mod').value),
+                    savePetrify: removeCommasAndParse(document.getElementById('save-petrify').value),
+                    saveBreathMod: removeCommasAndParse(document.getElementById('save-breath-mod').value),
+                    saveBreath: removeCommasAndParse(document.getElementById('save-breath').value),
+                    saveSpellMod: removeCommasAndParse(document.getElementById('save-spell-mod').value),
+                    saveSpell: removeCommasAndParse(document.getElementById('save-spell').value),
+
+                    // Weapons
+                    specialAttacks: document.getElementById('special-attacks').value
+                };
+
+                // Save to localStorage
+                localStorage.setItem('adndCharacterCustom', JSON.stringify(characterData));
+                alert('Character saved successfully!');
+            });
+
+            // Load character function
+            document.getElementById('load-btn').addEventListener('click', function() {
+                const savedCharacter = localStorage.getItem('adndCharacterCustom');
+                if (savedCharacter) {
+                    const characterData = JSON.parse(savedCharacter);
+
+                    // Character Information
+                    document.getElementById('align').value = characterData.align || '';
+                    document.getElementById('race').value = characterData.race || '';
+                    document.getElementById('class').value = characterData.class || '';
+                    document.getElementById('level').value = formatNumberWithCommas(characterData.level || 1);
+                    document.getElementById('players-name').value = characterData.playersName || '';
+                    document.getElementById('family').value = characterData.family || '';
+                    document.getElementById('homland').value = characterData.homland || '';
+                    document.getElementById('leige-patron').value = characterData.leigePatron || '';
+                    document.getElementById('religion').value = characterData.religion || '';
+                    document.getElementById('sex').value = characterData.sex || '';
+                    document.getElementById('age').value = formatNumberWithCommas(characterData.age || 20);
+                    document.getElementById('social-class').value = characterData.socialClass || '';
+                    document.getElementById('status').value = characterData.status || '';
+                    document.getElementById('ht').value = characterData.ht || '';
+                    document.getElementById('wt').value = characterData.wt || '';
+                    document.getElementById('birth-rank').value = characterData.birthRank || '';
+                    document.getElementById('siblings').value = formatNumberWithCommas(characterData.siblings || 0);
+                    document.getElementById('hair').value = characterData.hair || '';
+                    document.getElementById('eyes').value = characterData.eyes || '';
+                    document.getElementById('appearance').value = characterData.appearance || '';
+                    document.getElementById('honor').value = formatNumberWithCommas(characterData.honor || 0);
+                    document.getElementById('base-honor').value = formatNumberWithCommas(characterData.baseHonor || 0);
+                    document.getElementById('reaction-adjustment').value = formatNumberWithCommas(characterData.reactionAdjustment || 0);
+
+                    // Abilities
+                    document.getElementById('str').value = formatNumberWithCommas(characterData.str || 10);
+                    document.getElementById('str-hit-prob').value = formatNumberWithCommas(characterData.strHitProb || 0);
+                    document.getElementById('str-dmg-adj').value = formatNumberWithCommas(characterData.strDmgAdj || 0);
+                    document.getElementById('str-max-press').value = formatNumberWithCommas(characterData.strMaxPress || 0);
+                    document.getElementById('str-op-drs').value = formatNumberWithCommas(characterData.strOpDrs || 0);
+                    document.getElementById('str-bb-lg').value = formatNumberWithCommas(characterData.strBbLg || 0);
+
+                    document.getElementById('dex').value = formatNumberWithCommas(characterData.dex || 10);
+                    document.getElementById('dex-rctn-adj').value = formatNumberWithCommas(characterData.dexRctnAdj || 0);
+                    document.getElementById('dex-missile-adj').value = formatNumberWithCommas(characterData.dexMissileAdj || 0);
+                    document.getElementById('dex-def-adj').value = formatNumberWithCommas(characterData.dexDefAdj || 0);
+
+                    document.getElementById('con').value = formatNumberWithCommas(characterData.con || 10);
+                    document.getElementById('con-hp-adj').value = formatNumberWithCommas(characterData.conHpAdj || 0);
+                    document.getElementById('con-says-shk').value = formatNumberWithCommas(characterData.conSaysShk || 0);
+                    document.getElementById('con-res-sur').value = formatNumberWithCommas(characterData.conResSur || 0);
+                    document.getElementById('con-poison-save').value = formatNumberWithCommas(characterData.conPoisonSave || 0);
+                    document.getElementById('con-regen').value = formatNumberWithCommas(characterData.conRegen || 0);
+
+                    document.getElementById('int').value = formatNumberWithCommas(characterData.int || 10);
+                    document.getElementById('int-lang').value = formatNumberWithCommas(characterData.intLang || 0);
+                    document.getElementById('int-spell-lvl').value = formatNumberWithCommas(characterData.intSpellLvl || 0);
+                    document.getElementById('int-lrn-sp').value = formatNumberWithCommas(characterData.intLrnSp || 0);
+                    document.getElementById('int-spells-level').value = formatNumberWithCommas(characterData.intSpellsLevel || 0);
+                    document.getElementById('int-spell-immune').value = characterData.intSpellImmune || '';
+
+                    document.getElementById('wis').value = formatNumberWithCommas(characterData.wis || 10);
+                    document.getElementById('wis-mag-def').value = formatNumberWithCommas(characterData.wisMagDef || 0);
+                    document.getElementById('wis-bonus-spells').value = formatNumberWithCommas(characterData.wisBonusSpells || 0);
+                    document.getElementById('wis-spell-fail').value = formatNumberWithCommas(characterData.wisSpellFail || 0);
+                    document.getElementById('wis-spell-immune').value = characterData.wisSpellImmune || '';
+
+                    document.getElementById('chr').value = formatNumberWithCommas(characterData.chr || 10);
+                    document.getElementById('chr-max-hench').value = formatNumberWithCommas(characterData.chrMaxHench || 0);
+                    document.getElementById('chr-loy-base').value = formatNumberWithCommas(characterData.chrLoyBase || 0);
+                    document.getElementById('chr-rctn-adj').value = formatNumberWithCommas(characterData.chrRctnAdj || 0);
+
+                    // Armor
+                    document.getElementById('ac').value = formatNumberWithCommas(characterData.ac || 10);
+                    document.getElementById('surprised-ac').value = formatNumberWithCommas(characterData.surprisedAc || 10);
+                    document.getElementById('shieldless-ac').value = formatNumberWithCommas(characterData.shieldlessAc || 10);
+                    document.getElementById('rear-ac').value = formatNumberWithCommas(characterData.rearAc || 10);
+                    document.getElementById('armor-type').value = characterData.armorType || '';
+                    document.getElementById('defenses').value = characterData.defenses || '';
+
+                    // Hit Points and Movement
+                    document.getElementById('hit-points').value = formatNumberWithCommas(characterData.hitPoints || 0);
+                    document.getElementById('wounds').value = characterData.wounds || '';
+                    document.getElementById('base-rate').value = formatNumberWithCommas(characterData.baseRate || 12);
+                    document.getElementById('light-move').value = formatNumberWithCommas(characterData.lightMove || 12);
+                    document.getElementById('mod-move').value = formatNumberWithCommas(characterData.modMove || 9);
+                    document.getElementById('hvy-move').value = formatNumberWithCommas(characterData.hvyMove || 6);
+                    document.getElementById('svr-move').value = formatNumberWithCommas(characterData.svrMove || 3);
+                    document.getElementById('jog-move').value = formatNumberWithCommas(characterData.jogMove || 24);
+                    document.getElementById('run3-move').value = formatNumberWithCommas(characterData.run3Move || 36);
+                    document.getElementById('run4-move').value = formatNumberWithCommas(characterData.run4Move || 48);
+                    document.getElementById('run5-move').value = formatNumberWithCommas(characterData.run5Move || 60);
+
+                    // Saving Throws
+                    document.getElementById('save-paralyze-mod').value = formatNumberWithCommas(characterData.saveParalyzeMod || 0);
+                    document.getElementById('save-paralyze').value = formatNumberWithCommas(characterData.saveParalyze || 0);
+                    document.getElementById('save-rod-mod').value = formatNumberWithCommas(characterData.saveRodMod || 0);
+                    document.getElementById('save-rod').value = formatNumberWithCommas(characterData.saveRod || 0);
+                    document.getElementById('save-petrify-mod').value = formatNumberWithCommas(characterData.savePetrifyMod || 0);
+                    document.getElementById('save-petrify').value = formatNumberWithCommas(characterData.savePetrify || 0);
+                    document.getElementById('save-breath-mod').value = formatNumberWithCommas(characterData.saveBreathMod || 0);
+                    document.getElementById('save-breath').value = formatNumberWithCommas(characterData.saveBreath || 0);
+                    document.getElementById('save-spell-mod').value = formatNumberWithCommas(characterData.saveSpellMod || 0);
+                    document.getElementById('save-spell').value = formatNumberWithCommas(characterData.saveSpell || 0);
+
+                    // Weapons and Special Attacks
+                    document.getElementById('special-attacks').value = characterData.specialAttacks || '';
+
+                    alert('Character loaded successfully!');
+                } else {
+                    alert('No saved character found!');
+                }
+            });
+
+            // Print function
+            document.getElementById('print-btn').addEventListener('click', function() {
+                window.print();
+            });
+
+            // Clear sheet function
+            document.getElementById('clear-btn').addEventListener('click', function() {
+                if (confirm('Are you sure you want to clear the entire character sheet?')) {
+                    // Clear all inputs
+                    const inputs = document.querySelectorAll('input, textarea, select');
+                    inputs.forEach(input => {
+                        if (input.classList.contains('comma-number')) {
+                            input.value = input.id === 'level' ? '1' :
+                                input.id === 'age' ? '20' :
+                                input.id === 'str' || input.id === 'dex' ||
+                                input.id === 'con' || input.id === 'int' ||
+                                input.id === 'wis' || input.id === 'chr' ? '10' :
+                                input.id === 'ac' || input.id === 'surprised-ac' ||
+                                input.id === 'shieldless-ac' || input.id === 'rear-ac' ? '10' :
+                                input.id === 'base-rate' || input.id === 'light-move' ? '12' :
+                                input.id === 'mod-move' ? '9' :
+                                input.id === 'hvy-move' ? '6' :
+                                input.id === 'svr-move' ? '3' :
+                                input.id === 'jog-move' ? '24' :
+                                input.id === 'run3-move' ? '36' :
+                                input.id === 'run4-move' ? '48' :
+                                input.id === 'run5-move' ? '60' : '0';
+                        } else if (input.type === 'text' || input.tagName === 'TEXTAREA') {
+                            input.value = '';
+                        } else if (input.type === 'checkbox') {
+                            input.checked = false;
+                        }
+                    });
+                    
+                    // Reapply formatting
+                    handleNumberFormatting();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
