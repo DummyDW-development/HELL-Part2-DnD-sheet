@@ -454,6 +454,104 @@
             text-align: center;
         }
 
+        /* Character Library Styles */
+        .character-library {
+            margin-top: 30px;
+            border-top: 2px solid #8b4513;
+            padding-top: 20px;
+        }
+
+        .library-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .search-box {
+            padding: 8px 12px;
+            border: 1px solid #8b4513;
+            border-radius: 4px;
+            width: 250px;
+            font-size: 14px;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .character-card {
+            border: 1px solid #8b4513;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f9f3e9;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .character-card h3 {
+            margin: 0 0 10px 0;
+            color: #8b4513;
+            border-bottom: 1px solid #e6d2b5;
+            padding-bottom: 5px;
+        }
+
+        .character-card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .character-card .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .character-card .details span {
+            font-weight: bold;
+        }
+
+        .character-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .character-actions button {
+            padding: 6px 12px;
+            font-size: 13px;
+        }
+
+        .load-btn {
+            background-color: #1EB373;
+        }
+
+        .load-btn:hover {
+            background-color: #189e63;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .no-characters {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+        }
+
         /* Mobile Styles - Fixed syntax error */
         @media (max-width: 768px) {
             body {
@@ -570,6 +668,29 @@
             /* Section Headers */
             .section-title {
                 font-size: 14px;
+            }
+
+            /* Character Library Mobile Styles */
+            .library-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .characters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .character-actions {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .character-actions button {
+                width: 100%;
             }
         }
 
@@ -1404,6 +1525,18 @@
             <button id="print-btn">Print Sheet</button>
             <button id="clear-btn">Clear Sheet</button>
         </div>
+
+        <!-- Character Library Section -->
+        <div class="character-library">
+            <div class="section-title">Character Library</div>
+            <div class="library-header">
+                <h3>Your Saved Characters</h3>
+                <input type="text" id="search-characters" class="search-box" placeholder="Search characters...">
+            </div>
+            <div id="characters-grid" class="characters-grid">
+                <!-- Character cards will be dynamically generated here -->
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1439,12 +1572,238 @@
             });
         }
 
+        // Character Library Functions
+        function getAllSavedCharacters() {
+            const characters = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('adndCharacter_')) {
+                    try {
+                        const characterData = JSON.parse(localStorage.getItem(key));
+                        characters.push({
+                            key: key,
+                            data: characterData
+                        });
+                    } catch (e) {
+                        console.error('Error parsing character data for key:', key, e);
+                    }
+                }
+            }
+            return characters;
+        }
+
+        function displayCharacters(characters) {
+            const grid = document.getElementById('characters-grid');
+            
+            if (characters.length === 0) {
+                grid.innerHTML = '<div class="no-characters">No characters saved yet. Create a character and click "Save Character" to add it to your library.</div>';
+                return;
+            }
+            
+            grid.innerHTML = '';
+            
+            characters.forEach(character => {
+                const charData = character.data;
+                const card = document.createElement('div');
+                card.className = 'character-card';
+                
+                card.innerHTML = `
+                    <h3>${charData.family || 'Unnamed Character'}</h3>
+                    <div class="details">
+                        <p><span>Player:</span> ${charData.playersName || 'Unknown'}</p>
+                        <p><span>Age:</span> ${formatNumberWithCommas(charData.age || 0)}</p>
+                    </div>
+                    <p><span>Race:</span> ${charData.race || 'Unknown'}</p>
+                    <p><span>Class:</span> ${charData.class || 'Unknown'}</p>
+                    <p><span>Level:</span> ${formatNumberWithCommas(charData.level || 1)}</p>
+                    <div class="character-actions">
+                        <button class="load-btn" data-key="${character.key}">Load</button>
+                        <button class="delete-btn" data-key="${character.key}">Delete</button>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+            
+            // Add event listeners to load buttons
+            document.querySelectorAll('.load-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const key = this.getAttribute('data-key');
+                    loadCharacterFromLibrary(key);
+                });
+            });
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const key = this.getAttribute('data-key');
+                    deleteCharacterFromLibrary(key);
+                });
+            });
+        }
+
+        function loadCharacterFromLibrary(key) {
+            const characterData = JSON.parse(localStorage.getItem(key));
+            
+            if (!characterData) {
+                alert('Character not found!');
+                return;
+            }
+            
+            // Character Information
+            document.getElementById('align').value = characterData.align || '';
+            document.getElementById('race').value = characterData.race || '';
+            document.getElementById('class').value = characterData.class || '';
+            document.getElementById('level').value = formatNumberWithCommas(characterData.level || 1);
+            document.getElementById('players-name').value = characterData.playersName || '';
+            document.getElementById('family').value = characterData.family || '';
+            document.getElementById('homland').value = characterData.homland || '';
+            document.getElementById('leige-patron').value = characterData.leigePatron || '';
+            document.getElementById('religion').value = characterData.religion || '';
+            document.getElementById('sex').value = characterData.sex || '';
+            document.getElementById('age').value = formatNumberWithCommas(characterData.age || 20);
+            document.getElementById('social-class').value = characterData.socialClass || '';
+            document.getElementById('status').value = characterData.status || '';
+            document.getElementById('ht').value = characterData.ht || '';
+            document.getElementById('wt').value = characterData.wt || '';
+            document.getElementById('birth-rank').value = characterData.birthRank || '';
+            document.getElementById('siblings').value = formatNumberWithCommas(characterData.siblings || 0);
+            document.getElementById('hair').value = characterData.hair || '';
+            document.getElementById('eyes').value = characterData.eyes || '';
+            document.getElementById('appearance').value = characterData.appearance || '';
+            document.getElementById('honor').value = formatNumberWithCommas(characterData.honor || 0);
+            document.getElementById('base-honor').value = formatNumberWithCommas(characterData.baseHonor || 0);
+            document.getElementById('reaction-adjustment').value = formatNumberWithCommas(characterData.reactionAdjustment || 0);
+
+            // Abilities
+            document.getElementById('str').value = formatNumberWithCommas(characterData.str || 10);
+            document.getElementById('str-hit-prob').value = formatNumberWithCommas(characterData.strHitProb || 0);
+            document.getElementById('str-dmg-adj').value = formatNumberWithCommas(characterData.strDmgAdj || 0);
+            document.getElementById('str-max-press').value = formatNumberWithCommas(characterData.strMaxPress || 0);
+            document.getElementById('str-op-drs').value = formatNumberWithCommas(characterData.strOpDrs || 0);
+            document.getElementById('str-bb-lg').value = formatNumberWithCommas(characterData.strBbLg || 0);
+
+            document.getElementById('dex').value = formatNumberWithCommas(characterData.dex || 10);
+            document.getElementById('dex-rctn-adj').value = formatNumberWithCommas(characterData.dexRctnAdj || 0);
+            document.getElementById('dex-missile-adj').value = formatNumberWithCommas(characterData.dexMissileAdj || 0);
+            document.getElementById('dex-def-adj').value = formatNumberWithCommas(characterData.dexDefAdj || 0);
+
+            document.getElementById('con').value = formatNumberWithCommas(characterData.con || 10);
+            document.getElementById('con-hp-adj').value = formatNumberWithCommas(characterData.conHpAdj || 0);
+            document.getElementById('con-says-shk').value = formatNumberWithCommas(characterData.conSaysShk || 0);
+            document.getElementById('con-res-sur').value = formatNumberWithCommas(characterData.conResSur || 0);
+            document.getElementById('con-poison-save').value = formatNumberWithCommas(characterData.conPoisonSave || 0);
+            document.getElementById('con-regen').value = formatNumberWithCommas(characterData.conRegen || 0);
+
+            document.getElementById('int').value = formatNumberWithCommas(characterData.int || 10);
+            document.getElementById('int-lang').value = formatNumberWithCommas(characterData.intLang || 0);
+            document.getElementById('int-spell-lvl').value = formatNumberWithCommas(characterData.intSpellLvl || 0);
+            document.getElementById('int-lrn-sp').value = formatNumberWithCommas(characterData.intLrnSp || 0);
+            document.getElementById('int-spells-level').value = formatNumberWithCommas(characterData.intSpellsLevel || 0);
+            document.getElementById('int-spell-immune').value = characterData.intSpellImmune || '';
+
+            document.getElementById('wis').value = formatNumberWithCommas(characterData.wis || 10);
+            document.getElementById('wis-mag-def').value = formatNumberWithCommas(characterData.wisMagDef || 0);
+            document.getElementById('wis-bonus-spells').value = formatNumberWithCommas(characterData.wisBonusSpells || 0);
+            document.getElementById('wis-spell-fail').value = formatNumberWithCommas(characterData.wisSpellFail || 0);
+            document.getElementById('wis-spell-immune').value = characterData.wisSpellImmune || '';
+
+            document.getElementById('chr').value = formatNumberWithCommas(characterData.chr || 10);
+            document.getElementById('chr-max-hench').value = formatNumberWithCommas(characterData.chrMaxHench || 0);
+            document.getElementById('chr-loy-base').value = formatNumberWithCommas(characterData.chrLoyBase || 0);
+            document.getElementById('chr-rctn-adj').value = formatNumberWithCommas(characterData.chrRctnAdj || 0);
+
+            // Armor
+            document.getElementById('ac').value = formatNumberWithCommas(characterData.ac || 10);
+            document.getElementById('surprised-ac').value = formatNumberWithCommas(characterData.surprisedAc || 10);
+            document.getElementById('shieldless-ac').value = formatNumberWithCommas(characterData.shieldlessAc || 10);
+            document.getElementById('rear-ac').value = formatNumberWithCommas(characterData.rearAc || 10);
+            document.getElementById('armor-type').value = characterData.armorType || '';
+            document.getElementById('defenses').value = characterData.defenses || '';
+
+            // Hit Points and Movement
+            document.getElementById('hit-points').value = formatNumberWithCommas(characterData.hitPoints || 0);
+            document.getElementById('wounds').value = characterData.wounds || '';
+            document.getElementById('base-rate').value = formatNumberWithCommas(characterData.baseRate || 12);
+            document.getElementById('light-move').value = formatNumberWithCommas(characterData.lightMove || 12);
+            document.getElementById('mod-move').value = formatNumberWithCommas(characterData.modMove || 9);
+            document.getElementById('hvy-move').value = formatNumberWithCommas(characterData.hvyMove || 6);
+            document.getElementById('svr-move').value = formatNumberWithCommas(characterData.svrMove || 3);
+            document.getElementById('jog-move').value = formatNumberWithCommas(characterData.jogMove || 24);
+            document.getElementById('run3-move').value = formatNumberWithCommas(characterData.run3Move || 36);
+            document.getElementById('run4-move').value = formatNumberWithCommas(characterData.run4Move || 48);
+            document.getElementById('run5-move').value = formatNumberWithCommas(characterData.run5Move || 60);
+
+            // Saving Throws
+            document.getElementById('save-paralyze-mod').value = formatNumberWithCommas(characterData.saveParalyzeMod || 0);
+            document.getElementById('save-paralyze').value = formatNumberWithCommas(characterData.saveParalyze || 0);
+            document.getElementById('save-rod-mod').value = formatNumberWithCommas(characterData.saveRodMod || 0);
+            document.getElementById('save-rod').value = formatNumberWithCommas(characterData.saveRod || 0);
+            document.getElementById('save-petrify-mod').value = formatNumberWithCommas(characterData.savePetrifyMod || 0);
+            document.getElementById('save-petrify').value = formatNumberWithCommas(characterData.savePetrify || 0);
+            document.getElementById('save-breath-mod').value = formatNumberWithCommas(characterData.saveBreathMod || 0);
+            document.getElementById('save-breath').value = formatNumberWithCommas(characterData.saveBreath || 0);
+            document.getElementById('save-spell-mod').value = formatNumberWithCommas(characterData.saveSpellMod || 0);
+            document.getElementById('save-spell').value = formatNumberWithCommas(characterData.saveSpell || 0);
+
+            // Weapons and Special Attacks
+            document.getElementById('special-attacks').value = characterData.specialAttacks || '';
+
+            // Scroll to top of the sheet
+            window.scrollTo(0, 0);
+            
+            alert('Character loaded successfully!');
+        }
+
+        function deleteCharacterFromLibrary(key) {
+            if (confirm('Are you sure you want to delete this character? This action cannot be undone.')) {
+                localStorage.removeItem(key);
+                refreshCharacterLibrary();
+                alert('Character deleted successfully!');
+            }
+        }
+
+        function refreshCharacterLibrary() {
+            const characters = getAllSavedCharacters();
+            displayCharacters(characters);
+        }
+
+        function searchCharacters() {
+            const searchTerm = document.getElementById('search-characters').value.toLowerCase();
+            const allCharacters = getAllSavedCharacters();
+            
+            if (!searchTerm) {
+                displayCharacters(allCharacters);
+                return;
+            }
+            
+            const filteredCharacters = allCharacters.filter(character => {
+                const charData = character.data;
+                return (
+                    (charData.family && charData.family.toLowerCase().includes(searchTerm)) ||
+                    (charData.playersName && charData.playersName.toLowerCase().includes(searchTerm)) ||
+                    (charData.race && charData.race.toLowerCase().includes(searchTerm)) ||
+                    (charData.class && charData.class.toLowerCase().includes(searchTerm))
+                );
+            });
+            
+            displayCharacters(filteredCharacters);
+        }
+
         // Initialize number formatting
         document.addEventListener('DOMContentLoaded', function() {
             handleNumberFormatting();
+            refreshCharacterLibrary();
+            
+            // Search functionality
+            document.getElementById('search-characters').addEventListener('input', searchCharacters);
             
             // Save character function
             document.getElementById('save-btn').addEventListener('click', function() {
+                const characterName = document.getElementById('family').value || 'Unnamed Character';
+                const playerName = document.getElementById('players-name').value || 'Unknown Player';
+                const characterKey = `adndCharacter_${characterName}_${playerName}_${Date.now()}`;
+                
                 const characterData = {
                     // Character Information
                     align: document.getElementById('align').value,
@@ -1547,11 +1906,14 @@
                 };
 
                 // Save to localStorage
-                localStorage.setItem('adndCharacterCustom', JSON.stringify(characterData));
+                localStorage.setItem(characterKey, JSON.stringify(characterData));
                 alert('Character saved successfully!');
+                
+                // Refresh the character library
+                refreshCharacterLibrary();
             });
 
-            // Load character function
+            // Load character function (legacy - for backward compatibility)
             document.getElementById('load-btn').addEventListener('click', function() {
                 const savedCharacter = localStorage.getItem('adndCharacterCustom');
                 if (savedCharacter) {
